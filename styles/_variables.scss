@@ -1,0 +1,46 @@
+$font_mono: 'IBM Plex Mono', sans-serif;
+$font_sans: 'IBM Plex Sans', sans-serif;
+
+$blanco: #FFFFFF;
+$turquesa: #00F3BB;
+$casinegro: #060A24;
+$violeta: #0000EC;
+
+%pan {
+    width: inherit;
+    height: 2px;
+    background-color: $casinegro;
+    position: absolute;
+    right: 0;
+}
+
+%titulos_mob {
+    font-family: $font_sans;
+    font-weight: 400;
+    font-size: 36px;
+    color: $casinegro;
+    letter-spacing: 0;
+    line-height: 42px;
+}
+
+%parrafos_mob {
+    font-family: $font_mono;
+    font-weight: 400;
+    font-size: 14px;
+    color: $casinegro;
+    letter-spacing: 0;
+    line-height: 22px;
+}
+
+%subtitulos {
+    width: 288px;
+    height: auto;
+    margin: 0 16px;
+    font-family: $font_sans;
+    font-weight: 600;
+    font-size: 24px;
+    color: $casinegro;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 32px;
+}

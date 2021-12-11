@@ -1,0 +1,125 @@
+footer {
+    position: relative;
+    top: 80px;
+    width: 100%;
+    height: auto;
+    #titulo_footer {
+        padding: 0 16px;
+        width: 100%;
+        height: 341px;
+        background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+        clip-path: polygon(0 9%, 100% 0%, 100% 100%, 0% 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h2 {
+            margin-bottom: 36px;
+            width: 100%;
+            height: auto;
+            @extend %titulos_mob;
+            color: $blanco;
+            text-align: center;
+        }
+        #boton_footer {
+            width: 288px;
+            height: 48px;
+            padding: 13px 43px;
+            background: $turquesa;
+            font-family: $font_mono;
+            font-weight: 500;
+            font-size: 16px;
+            color: $casinegro;
+            line-height: 22px;
+            letter-spacing: 0;
+            text-decoration: none; 
+            cursor: pointer;
+            &:hover {
+                background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+                color: $blanco;
+            }
+        } 
+    }
+    #redes_footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 121px;
+        h3 {
+            margin-top: 24px;
+            margin-bottom: 16px;
+            width: auto;
+            height: auto;
+            @extend %parrafos_mob;
+        }
+        #iconos_redes {
+            width: 230px;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            a {
+                font-size: 16px;
+                color: $casinegro;
+                letter-spacing: 0;
+                line-height: 28px;
+            }
+        }
+    }
+}        
+
+@media screen and (min-width:768px) {
+    footer {
+        top: 100px;
+        #titulo_footer {
+            padding: 0;
+        }
+    }
+}
+
+@media screen and (min-width:1200px) {
+    footer {
+        #titulo_footer {
+            padding: 0 347px;
+            width: 100%;
+            height: 518px;
+            clip-path: polygon(0 21%, 100% 0%, 100% 100%, 0% 100%);
+            h2 {
+                display: inline-block;
+                width: 692px;
+                height: auto;
+                font-size: 48px;
+                line-height: 62px;
+            }
+            #boton_footer {
+                width: 345px;
+                height: 56px;        
+                padding: 16px 59px;
+                font-size: 18px;
+                line-height: 24px;
+            }
+        }
+        #redes_footer {
+            padding: 0 100px;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 95px;
+            h3 {
+                margin:0;
+                font-size: 16px;
+                line-height: 28px;
+            }
+            #iconos_redes {
+                padding: 0;
+                width: 214px;
+                a {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
