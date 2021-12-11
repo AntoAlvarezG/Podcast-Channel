@@ -1,0 +1,109 @@
+#temas {
+    position: relative;
+    top: 55px;
+    padding: 0 16px;
+    width: 100%;
+    height: auto;
+    h2 {
+        width: 288px;
+        height: auto;
+        margin-top: 48px;
+        @extend %titulos_mob;
+    }
+    #contenedor_temas {
+        width: 100%;
+        height: 768px;
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        #remoto, #repensando, #bases, #seguridad {
+            width: 100%;
+            height: auto;   
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            img {
+                width: 104px;
+                height: 104px;
+                margin-bottom: 13px;
+            }   
+            figcaption {
+                @extend %subtitulos;
+            }       
+        }
+    }
+}
+
+@media screen and (min-width:768px) {
+    #temas {
+        position: relative;
+        top: 55px;
+        padding: 0;
+        width: 100%;
+        height: auto;
+        h2 {
+            width: auto;
+            margin-left: 16px;
+        }
+        #contenedor_temas {
+            margin-top: 36px;
+            width: 100%;
+            height: auto;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 50% 50%;
+            gap: 20px;
+            #remoto, #repensando, #bases, #seguridad {
+                width: 100%;
+                height: auto;   
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;      
+            }
+        }    
+    }        
+}
+
+@media screen and (min-width:1200px) {
+    #temas {
+        position: relative;
+        padding: 0;
+        width: 100%;
+        height: auto;
+        h2 {
+            margin-top: 64px;
+            margin-left: 200px;
+            display: inline-block;
+            width: auto;
+            font-size: 48px;
+            line-height: 62px;
+        }
+        #contenedor_temas {
+            padding: 0 200px;
+            margin-bottom: 34px;
+            width: 100%;
+            height: 196px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            #remoto, #repensando, #bases, #seguridad {
+                width: 260px;
+                height: auto;   
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                img {
+                    margin-bottom: 29px;
+                } 
+                figcaption {
+                    width: 220px;
+                }         
+            }
+        }
+    } 
+}

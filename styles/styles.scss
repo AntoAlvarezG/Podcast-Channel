@@ -1,0 +1,706 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap');
+@import "variables";
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    nav {
+        width: 100%;
+        height: 44px;
+        display: flex;
+        justify-content: space-between;
+        a {
+            width: 24px;
+            height: 24px;
+            margin-top: 10px;
+            margin-left: 16px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        #menu_hamburguesa {
+            width: 18px;
+            height: 12px;
+            margin-top: 16px;
+            margin-right: 19px;            
+            span { 
+                width: inherit;
+                height: 2px;    
+                background-color: $casinegro;
+                position: absolute;
+                top: 21px;
+                &::before {
+                    content: "";
+                    @extend %rayas;
+                    top: -5px;
+                }
+                &::after {
+                    content: "";
+                    @extend %rayas;
+                    top: 5px;
+                }    
+            }    
+            #checkbox {
+                display: block;
+                width: 18px;
+                height: 12px;
+                position: absolute;
+                z-index: 20;
+                opacity: 0;
+                &:hover {
+                    cursor: pointer;
+                }
+                &:checked ~ ul {
+                    visibility: visible;
+                }
+                &:checked ~ span {
+                    background-color: $blanco;
+                }
+                &:checked ~ ::before{
+                    width: 14px;
+                    transform: rotate(45deg) translateX(0.5px);
+                    transform-origin: bottom left;
+                    transition: transform 0.3s ease-in-out;
+                        
+                }
+                &:checked ~ ::after{
+                    width: 14px;
+                    transform: rotate(-45deg) translateY(1px);
+                    transform-origin: top left;
+                    transition: transform 0.3s ease-in-out;
+                }
+            }        
+            ul {
+                background-color: $violeta;
+                width: 100%;
+                height: 224px;
+                list-style: none;
+                position: absolute;
+                top: 44px;
+                left: 0px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                visibility: hidden;
+                a {
+                    font-family: $font_mono;
+                    font-weight: 400;
+                    font-size: 16px;
+                    text-decoration: none;
+                    letter-spacing: 0;
+                    line-height: 28px;
+                    color: $blanco;
+                    padding: 16px;
+                }
+            }   
+        }
+    }
+    .hello {
+        width: 100%;
+        height: auto;
+        padding: 0px 16px;
+        .titulo {
+            width: auto;
+            height: auto;
+            margin-top: 29px;
+            p, span {
+                display: inline-block;
+                font-family: $font_sans;
+                font-weight: 400;
+                font-size: 36px;
+                color: $casinegro;
+                letter-spacing: 0;
+                line-height: 42px;
+            }
+            #mundo {
+                text-decoration-line: line-through;
+            }   
+        }
+        .subtitulo {
+            width: auto;
+            #sub_mob {
+                margin-top: 16px;
+                margin-bottom: 36px;
+                font-family: $font_mono;
+                font-weight: 400;
+                font-size: 14px;
+                color: $casinegro;
+                letter-spacing: 0;
+                line-height: 22px;
+            }
+            #sub_web {
+                display: none;
+            }  
+        }
+        button {
+            width: 288px;
+            height: 48px;
+            margin-bottom: 67px;
+            background: $turquesa;
+            cursor: pointer;
+            &:hover {
+                color: $blanco;
+                background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+            }
+            a {
+                font-family: $font_mono;
+                font-weight: 500;
+                font-size: 16px;
+                color: $casinegro;
+                text-align: center;
+                line-height: 22px;
+                letter-spacing: 0;
+                text-decoration: none;
+                
+            }
+        }   
+    }
+    .episodios {
+        width: 100%;
+        height: 1203.5px;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 390px;
+            left: 0;
+            width: 100%;
+            height: 1203.5px;
+            background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+            clip-path: polygon(0 4%, 100% 0%, 100% 96%, 0% 100%);
+        }
+        .contenedor_episodios {
+            #titulo_episodios {
+                display: inline-block;
+                padding-top: 64px;
+                padding-left: 16px;
+                font-family: $font_sans;
+                font-weight: 400;
+                font-size: 36px;
+                color: $blanco;
+                letter-spacing: 0;
+                line-height: 42px;
+            }
+            #contenedor_iframes {
+                width: 100%;
+                margin-top: 21px;
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                .iframes {
+                    position: relative;
+                    margin: 11px;
+                    width: 298px;
+                    height: 225px;
+                    iframe {
+                        position: absolute;
+                        width: inherit;
+                        height: inherit; 
+                    }
+                }
+            }
+        }
+    }
+    .venimos {
+        width: 100%;
+        height: auto;
+        #img_venimos {
+            width: 360px;
+            height: 519px;
+            transform: translateY(-95.5px);
+            margin-bottom: 27px;
+            img {
+                width: 90%;
+                height: auto;
+            }
+        }
+        h1 {
+            width: 288px;
+            height: 84px;
+            margin: 0px 16px;
+            margin-bottom: 8px;
+            font-family: $font_sans;
+            font-weight: 400;
+            font-size: 36px;
+            color: $casinegro;
+            letter-spacing: 0;
+            line-height: 42px;
+            transform: translateY(-95.5px);
+        }
+        #conoce_mas {
+            width: 288px;
+            height: 254px;
+            margin: 0px 16px;
+            transform: translateY(-95.5px);
+            p {
+                text-align: justify;
+                font-family: $font_mono;
+                font-weight: 400;
+                font-size: 14px;
+                color: $casinegro;
+                letter-spacing: 0;
+                line-height: 22px;
+            }
+            #posturings {
+                margin-bottom: 16px;
+            }
+        }
+    }
+    .invitados {
+        width: 100%;
+        height: auto;
+        h1 {
+            position: absolute;
+            top: 2401px;
+            bottom: 14px; 
+            margin: 0 16px;
+            margin-bottom: 14px;
+            width: 288px;
+            height: 84px;
+            font-family: $font_sans;
+            font-weight: 400;
+            font-size: 36px;
+            color: $casinegro;
+            letter-spacing: 0;
+            line-height: 42px;
+        }
+        .contenedor_invitados {
+            position: absolute;
+            top: 2499px;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .img_invitado {
+            width: 320px;
+            height: 243px;
+            position: relative;
+            img {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+            }
+        }
+    }
+    .temas {
+        width: 100%;
+        height: auto;
+        h1 {
+            width: 90%;
+            height: 1.5%;
+            margin: 0 16px;
+            position: absolute;
+            top: 4004px;
+            font-family: $font_sans;
+            font-weight: 400;
+            font-size: 36px;
+            color: $casinegro;
+            letter-spacing: 0;
+            line-height: 42px;
+        }
+        .contenedor_temas {
+            width: 100%;
+            height: 900px;
+            position: absolute;
+            top: 4125px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            #remoto, #repensando, #bases, #seguridad {
+                width: 100%;
+                height: auto;   
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+                a {
+                    width: 104px;
+                    height: 104px;
+                    align-self: center;
+                    margin-bottom: 13px;
+                }        
+                h2 {
+                    @extend %subtitulos;
+                }
+            }
+        }
+    }  
+    footer {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 4974px;
+        .titulo_footer {
+            width: 100%;
+            height: 341px;
+            background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            h1 {
+                width: 288px;
+                height: 126px;
+                margin: 0 16px;
+                margin-top: 64px;
+                font-family: $font_sans;
+                font-weight: 400;
+                font-size: 36px;
+                color: $blanco;
+                letter-spacing: 0;
+                text-align: center;
+                line-height: 42px;
+            }
+            button {
+                width: 288px;
+                height: 48px;
+                margin: 0 16px;
+                margin-bottom: 67px;
+                background: $turquesa;
+                cursor: pointer;
+                a {
+                    font-family: $font_mono;
+                    font-weight: 500;
+                    font-size: 16px;
+                    color: $casinegro;
+                    text-align: center;
+                    line-height: 22px;
+                    letter-spacing: 0;
+                    text-decoration: none;
+                }
+                &:hover {
+                    color: $blanco;
+                    background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+                }
+            }   
+        }
+        h3 {
+            width: 227px;
+            margin-top: 24px;
+            margin-left: 47px;
+            margin-right: 46px;
+            font-family: $font_mono;
+            font-weight: 400;
+            font-size: 14px;
+            color: $casinegro;
+            letter-spacing: 0;
+            line-height: 22px;
+        }
+        .iconos_redes {
+            width: auto;
+            margin: 0 45px;
+            margin-top: 16px;
+            margin-bottom: 31px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            a {
+                font-size: 16px;
+                color: $casinegro;
+                letter-spacing: 0;
+                line-height: 28px;
+            }
+        }
+    }
+}              
+
+
+
+
+
+
+
+
+
+@media screen and (min-width:1200px){
+    body {
+        nav {
+            height: 80px;
+            a {
+                width: 36px;
+                height: 36px;
+                margin-top: 22px;
+                margin-left: 100px;
+            }
+            #menu_hamburguesa {
+                width: 482px;
+                height: 28px;
+                margin-top: 26px;
+                margin-right: 100px;
+                span { 
+                display: none;                        
+                }
+                #checkbox {
+                    display: none;
+                }
+                ul {
+                    background-color: $blanco;
+                    width: inherit;
+                    height: inherit;
+                    list-style: none;
+                    position: relative;
+                    top: 0px;
+                    right: 100px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    visibility: visible;
+                    li, a{
+                        width: auto;
+                        height: auto;
+                        color: $casinegro;
+                        margin: 0px;
+                        padding: 0px;
+                    }
+                }   
+            }
+        }
+        .hello {
+            padding-left: 200px;
+            padding-right: 0;
+            .titulo {
+                margin-top: 120px;
+                p, span {
+                    font-size: 64px;
+                    line-height: 84px;
+                    span {
+                        color: $violeta;
+                    }
+                }
+            }
+            .subtitulo {
+                #sub_mob {
+                    display: none;
+                }
+                #sub_web {
+                    width: 628px;
+                    display: inline-block;
+                    margin-top: 0px;
+                    margin-bottom: 56px;
+                    font-family: $font_mono;
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: $casinegro;
+                    letter-spacing: 0;
+                    line-height: 24px; 
+                }  
+            }
+            button {
+                width: 226px;
+                height: 56px;
+                font-size: 18px;
+                line-height: 24px;
+                margin-bottom: 5px;             
+            }
+        }
+        .episodios {
+            width: auto;
+            height: 1042.6px;
+            background-color: $violeta;
+            #titulo_episodios {
+                display: inline-block;
+                padding-top: 186px;
+                padding-left: 200px;
+                font-size: 48px;
+                line-height: 62px;
+            }
+            #contenedor_iframes {
+                width: auto;
+                margin-top: 26px;
+                margin-left: 100px;
+                margin-right: 100px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                gap: 72px;
+                .iframes {
+                    position: relative;
+                    margin: 0;
+                    width: 584px;
+                    height: 232px;
+                    iframe {
+                        position: absolute;
+                        width: inherit;
+                        height: inherit;
+                    }
+                }
+            }
+        }
+        .venimos {
+            position: relative;
+            #img_venimos {
+                display: inline-block;
+                width: 457.6px;
+                height: 660px;
+                transform: translateY(-168.6px);
+                margin-left: 200px;
+                margin-bottom: 0;
+                img {
+                    justify-content: center;
+                }
+            }
+            h1 {
+                display: inline-block;
+                position: absolute;
+                bottom: 473px;
+                left: 720px;
+                width: 399px;
+                height: 62px;
+                margin: 0px;
+                font-size: 48px;
+                line-height: 62px;
+            }
+            #conoce_mas {
+                display: inline-block;
+                position: absolute;
+                bottom: 245px;
+                left: 720px;
+                width: 464px;
+                height: 204px;
+                margin: 0;
+                p {
+                    text-align: left;
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+            }
+        }
+        .invitados {
+            width: 100%;
+            height: 850px;
+            h1 {
+                display: block;
+                position: absolute;
+                top: 2047px;
+                left: 200px;
+                bottom: 36px;
+                margin: 0;
+                width: 481px;
+                height: 62px;
+                font-size: 48px;
+                line-height: 62px;
+            }
+            .contenedor_invitados {
+                width: 100%;
+                position: absolute;
+                top: 2145px;
+                height: auto;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .img_invitado {
+                width: 480px;
+                height: 364px;
+                position: relative;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                }
+            }
+        }
+        .temas {
+            width: 100%;
+            height: 426px;
+            h1 {
+                position: absolute;
+                top: 2937px;
+                width: 586px;
+                height: 62px;
+                margin-left: 200px;
+                font-size: 48px;
+                line-height: 42px;
+            }
+            .contenedor_temas {
+                width: auto;
+                height: auto;
+                margin: 0 200px;
+                position: relative;
+                top: 56px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                #remoto, #repensando, #bases, #seguridad {
+                    width: 260px;
+                    height: 130px; 
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: end;
+                    a {
+                        margin-bottom: 16px;
+                    }
+                    h2 {
+                        align-self: center;
+                    }
+            }   }    
+        }
+        footer {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 3299px;
+            .titulo_footer {
+                width: 100%;
+                height: 518px;
+                background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                h1 {
+                    width: 692px;
+                    height: 62px;
+                    margin: 0 374px;
+                    margin-top: 213px;
+                    font-size: 48px;
+                    line-height: 62px;
+                }
+                button {
+                    width: 345px;
+                    height: 56px;
+                    margin-left: 547px;
+                    margin-right: 548px;
+                    margin-bottom: 151px;
+                    background: $turquesa;
+                    cursor: pointer;
+                    a {
+                        font-size: 18px;
+                        text-align: center;
+                        line-height: 24px;
+                    }
+                }   
+            }
+            h3 {
+                float: left;
+                width: 269px;
+                margin-top: 36px;
+                margin-left: 100px;
+                font-size: 16px;
+                line-height: 28px;
+            }
+            .iconos_redes {
+                float: right;
+                width: 234px;
+                margin-right: 100px;
+                margin-top: 36px;
+                margin-bottom: 31px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                a {
+                    font-size: 18px;
+                    line-height: 28px;
+                }
+            }
+        }
+    }           
+}
