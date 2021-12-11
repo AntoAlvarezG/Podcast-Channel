@@ -6,9 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntoAlvarezG/Podcast-Channel.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AntoAlvarezG/Podcast-Channel/issues"
+  },
+  "homepage": "https://github.com/AntoAlvarezG/Podcast-Channel#readme",
   "dependencies": {
     "gh-pages": "^3.2.3"
   }
